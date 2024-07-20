@@ -6,7 +6,7 @@ import demo from "../assets/project/demo.png";
 import SectionWrapper from "../hoc/SectionWrapper";
 import {list} from "../constants"
 import { fadeIn, textVariant } from "../utils/motion";
-import { cProject, javaProject, webProject, otherProject } from "../constants";
+import { cProject, pythonProject, webProject, otherProject } from "../constants";
 import ProjectList from "./ProjectList";
 
 
@@ -20,7 +20,7 @@ const ProjectCard = ({
   source_link,
 }) => {
   return (
-    <motion.div whileInView={{ opacity: 1 , transform : 'none'}} variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
+    <motion.div>
       <Tilt
         options={{
           max: 45,
@@ -45,12 +45,10 @@ const ProjectCard = ({
               onClick={() => window.open(source_link, "_blank")}
               className='black-gradient w-10 h-10 m-2 rounded-full flex justify-center items-center cursor-pointer'
             >
-
               <img
                 src={demo}
                 alt='source code'
-                className='w-1/2 h-1/2 object-contain'
-              />
+                className='w-1/2 h-1/2 object-contain'/>
             </div>
             <div
               onClick={() => window.open(source_code_link, "_blank")}
@@ -86,13 +84,13 @@ const ProjectCard = ({
 };
 const Project = () => {
 
-  const [selected, setSelected] = useState("java");
+  const [selected, setSelected] = useState("python");
   const [data, setData] = useState([]);
 
   useEffect(() => {
     switch (selected) {
-      case "java":
-        setData(javaProject);
+      case "python":
+        setData(pythonProject);
         break;
       case "c++":
         setData(cProject);
@@ -117,7 +115,7 @@ const Project = () => {
       </motion.div>
 
       <div className='flex flex-col items-center w-full'>
-        <motion.p whileInView={{ opacity: 1 , transform : 'none'}}
+        <motion.div whileInView={{ opacity: 1 , transform : 'none'}}
           variants={fadeIn("", "", 0.1, 1)}
           className='mt-3 text-secondary text-[17px] leading-[30px]'
         >
@@ -139,7 +137,7 @@ const Project = () => {
           </div>
         ))}
       </div>
-      </motion.p>
+      </motion.div>
       </div>
 
     </>

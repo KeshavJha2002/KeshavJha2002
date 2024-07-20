@@ -22,6 +22,8 @@ import typescript from "../assets/technologies/typescript.png";
 
 import bny from "../assets/experience/bny.png";
 
+import game_2048 from "../assets/project/2048_game.png"
+
 export const educations = [{
     degree: "10th Grade",
     branch: "",
@@ -117,15 +119,34 @@ export const experiences = [{
 
 export const cProject = [];
 
-export const javaProject = [];
+export const pythonProject = [{
+    name: "2048_Game",
+    description: "A simple, fun to play 2048 game built using Python and OOPS concept.",
+    tags: [{
+            name: "Python",
+            color: "blue-text-gradient",
+        },
+        {
+            name: "OOPS",
+            color: "green-text-gradient",
+        },
+        {
+            name: "Games",
+            color: "pink-text-gradient",
+        },
+    ],
+    image: game_2048,
+    source_link: "https://github.com/KeshavJha2002/2048_game",
+    source_code_link: "https://github.com/KeshavJha2002/2048_game/tree/main/2048_game",
+}];
 
 export const webProject = [];
 
 export const otherProject = [];
 
 export const list = [{
-        id: "java",
-        title: "Java",
+        id: "python",
+        title: "Python",
     },
     {
         id: "c++",
